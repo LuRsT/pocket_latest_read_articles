@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+        <!--<![endif]-->
+
+        <title>{% block title %}{% endblock %}</title>
+
+        <link
+            rel="stylesheet"
+            href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"
+        />
+        <style>
+            body {
+                color: #121212;
+            }
+            tr.favorite {
+                background-color: #CFF09E;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pure-g">
+            <div class="pure-u-1-5"></div>
+            <div class="pure-u-3-5 content">{% block content %}{% endblock %}</div>
+            <div class="pure-u-1-5"></div>
+        </div>
+    </body>
+</html>

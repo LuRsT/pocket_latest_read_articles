@@ -1,0 +1,24 @@
+{% extends 'skeleton.html' %}
+
+{% block title %}Latest Read Articles{% endblock title %}
+
+{% block content %}
+    <h1>Latest read articles</h1>
+
+    <table class="pure-table pure-table-horizontal" style="width: 100%;">
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Link</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in latest_read_articles %}
+                <tr class="{% if article.favorite == "1" %}favorite{% endif %}">
+                    <td>{{ article.resolved_title }}</td>
+                    <td><a href="{{ article.resolved_url }}">Link</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

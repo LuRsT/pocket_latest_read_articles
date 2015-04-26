@@ -1,0 +1,14 @@
+{% extends 'skeleton.html' %}
+
+{% block title %}Authenticate{% endblock title %}
+
+{% block content %}
+    <h1>Check your latest read articles from Pocket</h1>
+
+    <p>
+        Using Pocket's API, this page will reveal what you read on the last 7
+        days.
+    </p>
+
+    <a class="pure-button" href="{{ authentication_url }}">Authenticate</a>
+{% endblock content %}
