@@ -1,5 +1,3 @@
-from datetime import datetime
-from datetime import timedelta
 from requests import get as make_get_request
 from time import mktime
 
@@ -7,13 +5,12 @@ from constants import POCKET_CONSUMER_KEY
 from requests_utils import get_endpoint_url
 
 
-def get_latest_read_articles(access_token):
-    one_week_ago = datetime.today() - timedelta(days=7)
+def get_read_articles_from_datetime(access_token, date_time):
     params = {
         'access_token': access_token,
         'consumer_key': POCKET_CONSUMER_KEY,
 
-        'since': mktime(one_week_ago.timetuple()),
+        'since': mktime(date_time.timetuple()),
         'detailType': 'simple',
         'state': 'archive',
     }

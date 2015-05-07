@@ -1,9 +1,13 @@
 {% extends 'skeleton.html' %}
 
-{% block title %}Latest Read Articles{% endblock title %}
+
+{% block title %}
+    Read Articles (from last {{ days_since }} days)
+{% endblock title %}
+
 
 {% block content %}
-    <h1>Latest read articles</h1>
+    <h1>Read articles (from last {{ days_since }} days)</h1>
 
     <table class="pure-table pure-table-horizontal" style="width: 100%;">
         <thead>
@@ -13,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for article in latest_read_articles %}
+            {% for article in read_articles %}
                 <tr class="{% if article.favorite == "1" %}favorite{% endif %}">
                     <td>{{ article.resolved_title }}</td>
                     <td><a href="{{ article.resolved_url }}">Link</a></td>
