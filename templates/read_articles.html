@@ -2,25 +2,31 @@
 
 
 {% block title %}
-    Read Articles (from last {{ days_since }} days)
+    Read Articles (last {{ days_since }} days)
 {% endblock title %}
 
 
 {% block content %}
-    <h1>Read articles (from last {{ days_since }} days)</h1>
+    <h1>Read articles (last {{ days_since }} days)</h1>
 
     <table class="pure-table pure-table-horizontal" style="width: 100%;">
         <thead>
             <tr>
-                <td>Title</td>
-                <td>Link</td>
+                <td>Article</td>
+                <td>Favourite</td>
             </tr>
         </thead>
         <tbody>
             {% for article in read_articles %}
-                <tr class="{% if article.favorite == "1" %}favorite{% endif %}">
-                    <td>{{ article.resolved_title }}</td>
-                    <td><a href="{{ article.resolved_url }}">Link</a></td>
+                <tr class="">
+                    <td>
+                        <a href="{{ article.resolved_url }}">
+                            {{ article.resolved_title }}
+                        </a>
+                    </td>
+                    <td>
+                        {% if article.favorite == "1" %}x{% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
