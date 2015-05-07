@@ -40,7 +40,6 @@ def view_read_articles(access_token, days=None):
     if not days:
         days = _DEFAULT_LATEST_DAYS
     date_time = datetime.today() - timedelta(days=days)
-    print date_time
     read_articles = \
         get_read_articles_from_datetime(access_token, date_time)
     return render_template(
