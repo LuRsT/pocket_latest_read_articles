@@ -55,5 +55,4 @@ def get_authentication_url():
     return authentication_url
 
 
-# TODO Use singleton class
 _CODE = _get_user_code()
