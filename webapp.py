@@ -8,7 +8,7 @@ from flask import url_for
 
 from pocket_auth import authorize_user
 from pocket_auth import get_authentication_url
-from pocket_retrive import get_read_articles_from_datetime
+from pocket_retrieve import get_read_articles_from_datetime
 
 
 _APP = Flask(__name__)
