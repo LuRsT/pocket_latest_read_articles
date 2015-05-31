@@ -36,12 +36,9 @@ def authentification_proxy():
 
 @_APP.route("/<string:access_token>/articles")
 @_APP.route("/<string:access_token>/articles/days/<int:days>")
-def view_read_articles(access_token, days=None):
-    if not days:
-        days = _DEFAULT_LATEST_DAYS
+def view_read_articles(access_token, days=_DEFAULT_LATEST_DAYS):
     date_time = datetime.today() - timedelta(days=days)
-    read_articles = \
-        get_read_articles_from_datetime(access_token, date_time)
+    read_articles = get_read_articles_from_datetime(access_token, date_time)
     return render_template(
         'read_articles.html',
         read_articles=read_articles,
