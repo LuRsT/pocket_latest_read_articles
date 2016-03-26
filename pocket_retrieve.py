@@ -24,5 +24,8 @@ def get_read_articles_from_datetime(access_token, date_time):
 
 def _format_articles(data):
     articles_list = data['list']
-    articles = [v for i, v in articles_list.items()]
+    if articles_list:
+        articles = [v for i, v in articles_list.items()]
+    else:
+        articles = []
     return articles
