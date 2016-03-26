@@ -47,4 +47,4 @@ def view_read_articles(access_token, days=_DEFAULT_LATEST_DAYS):
 
 
 if __name__ == "__main__":
-    _APP.run(debug=True)
+    _APP.run(host='0.0.0.0')
